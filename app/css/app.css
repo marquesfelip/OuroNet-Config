@@ -1,0 +1,31 @@
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body::-webkit-scrollbar,
+#filecontents::-webkit-scrollbar {
+    background-color: #dddbdb;
+    color: #c3bdb4;
+    width: 10px;
+    height: 10px;
+}
+
+body::-webkit-scrollbar-thumb,
+#filecontents::-webkit-scrollbar-thumb {
+    background-color: #949494;
+}
+
+body::-webkit-scrollbar-thumb:hover,
+#filecontents::-webkit-scrollbar-thumb:hover {
+    background-color: #808080;
+}
+
+body::-webkit-scrollbar-thumb:active,
+#filecontents::-webkit-scrollbar-thumb:active {
+    background-color: #727272;
+}
+
+body::-webkit-scrollbar-corner,
+#filecontents::-webkit-scrollbar-corner {
+    background-color: #dddbdb;
+}

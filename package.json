@@ -1,0 +1,34 @@
+{
+  "name": "ouronet-config",
+  "version": "1.0.0",
+  "description": "A Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \" Error: no test specified\" %% exit 1",
+    "dev": "electron . --debug",
+    "packwin32": "electron-packager . --overwrite --platform=win32 --arch=ia32 --out=../",
+    "packwin64": "electron-packager . --overwrite --platform=win32 --arch=x64 --out=../"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marquesfelip/ouronet-config-assist.git"
+  },
+  "keywords": [
+    "OuroNet",
+    "Config",
+    "Assistent"
+  ],
+  "author": "Felipe Marques and Mario Severo",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^9.1.0"
+  },
+  "dependencies": {
+    "python-shell": "^2.0.1"
+  },
+  "bugs": {
+    "url": "https://github.com/marquesfelip/ouronet-config-assist/issues"
+  },
+  "homepage": "https://github.com/marquesfelip/ouronet-config-assist#readme"
+}

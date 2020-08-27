@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="app/libs/bootstrap/css/bootstrap.min.css">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:400" rel="stylesheet">
+        <!-- Own CSS -->
+        <link rel="stylesheet" href="app/css/app.css">
+
+        <title>OuroNet Config Assistent</title>
+    </head>
+    <body>
+
+        <div class="text-center mt-3 mb-3">
+            <button type="button" class="btn btn-primary" id="getSavedConnections">Atualizar conexões</button>
+        </div>
+
+        <section class="container mt-3">
+            <h5 class="mb-0">Bases configuradas:</h5>
+            <div id="connections">Buscando conexões...</div>
+        </section>
+
+        <div class="text-center mt-3 mb-3 center">
+            <button type="button" class="btn btn-primary" id="addConnection" disabled>Adicionar conexão</button>
+            <button type="button" class="btn btn-success" id="setNewConnections" disabled>Salvar configurações</button>
+        </div>
+
+        <!-- You can also require other files to run in this process -->
+        <script>
+            require('./app/js/data.js')
+        </script>
+        <script src="./renderer.js"></script>
+        <script type="text/javascript" src="./app/libs/jquery/jquery-3.5.1.min.js" onload="window.$ = window.jQuery = module.exports;" ></script>
+        <script src="./app/libs/popper/popper.min.js"></script>
+        <script src="./app/libs/bootstrap/js/bootstrap.min.js"></script>
+
+    </body>
+</html>
