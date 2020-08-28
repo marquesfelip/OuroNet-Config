@@ -1,3 +1,4 @@
+// In data.js the DOM doesn't have to be manipulated
 const { PythonShell } = require('python-shell')
 const path = require('path')
 const { readFileSync, writeFileSync } = require('fs')

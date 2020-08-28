@@ -1,6 +1,6 @@
 module.exports = {
     generatesMenuTemplate() {
-        let menuTemplate = [{
+        const MENU_TEMPLATE = [{
                 label: 'View',
                 submenu: [{
                         role: 'reload'
@@ -35,6 +35,6 @@ module.exports = {
             }
         ]
 
-        return menuTemplate
+        return MENU_TEMPLATE
     }
 }

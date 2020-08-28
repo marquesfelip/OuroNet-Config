@@ -1,0 +1,18 @@
+# top-most EditorConfig file
+root = true
+
+# GENERIC SETTINGS
+[*]
+end_of_line = lf
+insert_final_newline = false
+trim_trailing_whitespace = true
+
+# WEB FILES
+[*.{css,html,js,py}]
+charset = utf-8
+indent_size = 4
+indent_style = space
+
+# MARKDOWN
+[*.md]
+trim_trailing_whitespace = false
