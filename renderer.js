@@ -14,12 +14,15 @@ let setNewConnections = document.getElementById('setNewConnections')
 
 // The idConnection will receive the number of children of 'connections' div and it will used for the next ID Connection.
 let idConnectionCount = 0
+const CONN_STRINGS_CONFIG = 'C:\\inetpub\\wwwroot\\OuroNetCadastro\\connectionStrings.config'
+const ALL_CONNECTIONS_JSON = path.join(__dirname, '\\app\\json\\allConnections.json')
+const NEW_CONNECTIONS_JSON = path.join(__dirname, '\\app\\json\\newConnections.json')
 
 // When opening the window, the connection strings will be loaded in the default installation location of the file.
 window.onload = async function () {
-    await data.getSavedConnections('C:\\inetpub\\wwwroot\\OuroNetCadastro\\connectionStrings.config')
+    await data.getSavedConnections(CONN_STRINGS_CONFIG)
 
-    connections.innerHTML = data.showSavedConnections(path.join(__dirname, '\\app\\json\\allConnections.json'))
+    connections.innerHTML = data.showSavedConnections(ALL_CONNECTIONS_JSON)
 
     idConnectionCount = document.getElementById('connections').childElementCount - 1
 
@@ -31,9 +34,9 @@ window.onload = async function () {
 getSavedConnections.addEventListener('click', async () => {
     connections.innerHTML = 'Buscando conexões...'
 
-    await data.getSavedConnections('C:\\inetpub\\wwwroot\\OuroNetCadastro\\connectionStrings.config')
+    await data.getSavedConnections(CONN_STRINGS_CONFIG)
 
-    connections.innerHTML = data.showSavedConnections(path.join(__dirname, '\\app\\json\\allConnections.json'))
+    connections.innerHTML = data.showSavedConnections(ALL_CONNECTIONS_JSON)
 
     idConnectionCount = document.getElementById('connections').childElementCount - 1
 })
@@ -64,19 +67,20 @@ setNewConnections.addEventListener('click', async () => {
         let initialCatalog = document.getElementById('connections').children[index].children[1].value
 
         if ((dataSource !== '') && (initialCatalog !== '')) {
-            jsonObj[index] =
-                {'Data Source' : dataSource,
-                'Initial Catalog' : initialCatalog}
+            jsonObj[index] = {
+                'Data Source': dataSource,
+                'Initial Catalog': initialCatalog
+            }
         }
     }
 
-    await data.setNewConnections(path.join(__dirname, '\\app\\json\\newConnections.json'), JSON.stringify(jsonObj))
+    await data.setNewConnections(NEW_CONNECTIONS_JSON, JSON.stringify(jsonObj))
 
     connections.innerHTML = 'Buscando conexões...'
 
-    await data.getSavedConnections('C:\\inetpub\\wwwroot\\OuroNetCadastro\\connectionStrings.config')
+    await data.getSavedConnections(CONN_STRINGS_CONFIG)
 
-    connections.innerHTML = data.showSavedConnections(path.join(__dirname, '\\app\\json\\allConnections.json'))
+    connections.innerHTML = data.showSavedConnections(ALL_CONNECTIONS_JSON)
 
     idConnectionCount = document.getElementById('connections').childElementCount - 1
 })

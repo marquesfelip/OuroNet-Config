@@ -8,7 +8,6 @@ class setConnections:
         self.setConnectionStringsFile()
         self.setConfigurationServerFile()
 
-
     def setConnectionStringsFile(self):
         connectionStringsConfig = ET.parse('C:\\inetpub\\wwwroot\\OuroNetCadastro\\connectionStrings.config')
 
@@ -68,7 +67,6 @@ class setConnections:
         configurationServer.write('C:\\inetpub\\wwwroot\\OuroNetCadastro\\custom.configuration.server.config', encoding='utf-8', xml_declaration=True, method='xml')
         configurationServer.write('C:\\inetpub\\wwwroot\\OuroNetMovimento\\custom.configuration.server.config', encoding='utf-8', xml_declaration=True, method='xml')
         configurationServer.write('C:\\inetpub\\wwwroot\\OuroNetFinanceiro\\custom.configuration.server.config', encoding='utf-8', xml_declaration=True, method='xml')
-
 
 def main():
     setConnections()
