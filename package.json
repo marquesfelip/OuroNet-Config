@@ -22,7 +22,7 @@
   "author": "Felipe Marques and Mario Severo",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^9.1.0"
+    "electron": "^9.3.0"
   },
   "dependencies": {
     "python-shell": "^2.0.1"
