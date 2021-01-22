@@ -29,7 +29,11 @@ class getConnections:
                 if identifier.errno == 2:
                     print('Arquivo nao encontrado em ' + filePaths[i])
                     i += 1
-                    validate = False
+
+                    if i < filePaths[i]:
+                        validate = False
+                    else:
+                        return
 
     def readXML(self):
         """Read the XML File of OuroNet that contains the connections strings."""
