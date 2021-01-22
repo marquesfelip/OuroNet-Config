@@ -84,15 +84,20 @@ SELECT_DIRECTORY.addEventListener('click', (event) => {
     ipcRenderer.send('open-file-dialog')
 })
 
-ipcRenderer.on('selected-directory', async (event, path) => {
-    const OPTIONS = {
-        setting: 'selectedDirectory',
-        value: path[0]
+ipcRenderer.on('selected-directory', async (event, path, canceled) => {
+
+    if (canceled) {
+        console.log('Nenhum caminho foi selecionado')
+    } else {
+        const OPTIONS = {
+            setting: 'selectedDirectory',
+            value: path[0]
+        }
+
+        console.log(path[0]);
+
+        await DATA.updateSetting(SETTINGS, OPTIONS)
     }
-
-    console.log(path[0]);
-
-    await DATA.updateSetting(SETTINGS, OPTIONS)
 })
 
 // Button: 'Adicionar conexão'
