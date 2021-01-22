@@ -1,0 +1,31 @@
+<template class="task-template">
+    <section id="ouronet-file-config-section" class="section js-section u-section-ouronet m-0 mt-3 container">
+        <p class="text-black-50">• Configuração das conexões nos arquivos OuroNet Cadastro, Movimento e Financeiro</p>
+        <p class="text-black-50" id='select-directory-description'>• Por padrão os arquivos de configuração são buscados no caminho <strong>"C:\\inetpub\\wwwroot\\"</strong>.
+            Caso seus arquivos não estejam nesta pasta, busque seu diretório clicando no botão <strong>"Selecionar diretório de arquivos"</strong>.</p>
+
+        <div class="text-center mb-3">
+            <button type="button" class="btn btn-outline-primary" id="getSavedConnections">Restaurar configurações</button>
+            <button type="button" class="btn btn-outline-primary" id="useBackup">Utilizar conexões de Backup</button>
+            <button type="button" class="btn btn-outline-primary" id="select-directory">Selecionar diretório de arquivos</button>
+        </div>
+
+        <h1 class="mb-0">Bases configuradas:</h1>
+
+        <div class=" text-center" id="connections">
+            <h2>Buscando conexões</h2>
+            <div class="d-inline-block spinner"></div>
+        </div>
+
+
+        <div class="text-center mt-3 mb-3 center">
+            <button type="button" class="btn btn-outline-primary" id="addConnection" disabled>Adicionar conexão</button>
+            <button type="button" class="btn btn-outline-success" id="setNewConnections" disabled>Salvar configurações</button>
+        </div>
+
+        <script>
+            require('./renderer-process/ouronet/renderer')
+        </script>
+        <script src="renderer-process/ouronet/events.js"></script>
+    </section>
+</template>
