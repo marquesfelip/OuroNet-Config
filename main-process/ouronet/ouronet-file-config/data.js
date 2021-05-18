@@ -68,9 +68,7 @@ module.exports = {
                 })
 
                 intervalId = setInterval(() => {
-                    console.log(pyshell.terminated);
                     if (pyshell.terminated) {
-                        console.log('finished getSavedConnections');
                         clearInterval(intervalId)
                         resolve(true)
                     }
@@ -124,9 +122,7 @@ module.exports = {
                 })
 
                 intervalId = setInterval(() => {
-                    console.log(pyshell.terminated);
                     if (pyshell.terminated) {
-                        console.log('finished updateOuroNetFiles');
                         clearInterval(intervalId)
                         resolve(true)
                     }
