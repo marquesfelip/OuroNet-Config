@@ -22,12 +22,12 @@
   "author": "Felipe Marques and Mario Severo",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^9.4.1",
+    "electron": "^9.4.4",
     "electron-packager": "^15.2.0"
   },
   "dependencies": {
     "electron-settings": "^4.0.2",
-    "glob": "^7.1.6",
+    "glob": "^7.1.7",
     "python-shell": "^2.0.3"
   },
   "bugs": {

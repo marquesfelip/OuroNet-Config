@@ -20,7 +20,10 @@ function initialize() {
             minHeight: 659,
             title: app.getName(),
             webPreferences: {
-                nodeIntegration: true
+                nodeIntegration: true,
+                worldSafeExecuteJavaScript: true,
+                contextIsolation: false,
+                enableRemoteModule: true
             }
         }
 

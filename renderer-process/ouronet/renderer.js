@@ -79,7 +79,7 @@ USE_BACKUP.addEventListener('click', async () => {
     idConnectionCount = document.getElementById('connections').childElementCount - 1
 })
 
-// Button: 'Seleionar diretório de arquivos
+// Button: 'Selecionar diretório de arquivos
 SELECT_DIRECTORY.addEventListener('click', (event) => {
     ipcRenderer.send('open-file-dialog')
 })

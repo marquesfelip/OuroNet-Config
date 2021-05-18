@@ -8,7 +8,7 @@ class getConnections:
     def __init__(self):
         self.connStrFile = ''
 
-        with open (Path(__file__).parent.__str__() + '\\helpers\\settings.json') as settingsJson:
+        with open (Path(__file__).parent.__str__() + '\\helpers\\settings.json', encoding='utf-8') as settingsJson:
             settings = json.load(settingsJson)
             selectedDirectory = settings['selectedDirectory']
 
@@ -72,7 +72,7 @@ class getConnections:
             return
 
         except Exception as identifier:
-            with open(allConnectionsPath, 'w') as fp:
+            with open(allConnectionsPath, 'w', encoding='utf-8') as fp:
                 json.dump({}, fp)
 
             print(identifier)
@@ -80,8 +80,8 @@ class getConnections:
 
     def createJsonFileConnections(self, allConnectionsPath, allConnections):
         """Generates the json file with connections got in "readXML" method."""
-        with open(allConnectionsPath, 'w') as fp:
-            json.dump(allConnections, fp)
+        with open(allConnectionsPath, 'w', encoding='utf-8') as fp:
+            json.dump(allConnections, fp, ensure_ascii=False)
 
 def main():
     getConnections()

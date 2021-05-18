@@ -6,7 +6,7 @@ class setConnections:
 
     def __init__(self):
 
-        with open (Path(__file__).parent.__str__() + '\\helpers\\settings.json') as settingsJson:
+        with open (Path(__file__).parent.__str__() + '\\helpers\\settings.json', encoding='utf-8') as settingsJson:
             settings = json.load(settingsJson)
             selectedDirectory = settings['selectedDirectory']
 
@@ -34,7 +34,7 @@ class setConnections:
         connStr.tail = '\n'
         connStr.text = '\n\n  '
 
-        with open(Path(__file__).parent.__str__() + '\\helpers\\newConnections.json') as data:
+        with open(Path(__file__).parent.__str__() + '\\helpers\\newConnections.json', encoding='utf-8') as data:
             connDict = json.load(data)
 
         for key in connDict:
@@ -75,7 +75,7 @@ class setConnections:
         databases.tail = '\n        '
         databases.text = '\n\n            '
 
-        with open(Path(__file__).parent.__str__() + '\\helpers\\newConnections.json') as data:
+        with open(Path(__file__).parent.__str__() + '\\helpers\\newConnections.json', encoding='utf-8') as data:
             connDict = json.load(data)
 
         for key in connDict:
